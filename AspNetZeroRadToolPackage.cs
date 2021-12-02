@@ -24,6 +24,8 @@ namespace AspNetZeroRadToolVisualStudioExtension
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(AspNetZeroRadToolPackage.PackageGuidString)]
     public sealed class AspNetZeroRadToolPackage : AsyncPackage
     {
@@ -45,6 +47,7 @@ namespace AspNetZeroRadToolVisualStudioExtension
         {
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
+            AspNetZeroRadTool.Initialize((Package)this);
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
         }
 
