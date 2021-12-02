@@ -114,6 +114,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="log4net.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -173,7 +174,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AspNetZero.bmp" />
+    <Content Include="Resources\AspNetZero.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <EmbeddedResource Include="Resources\database512RadTool.bmp" />
     <EmbeddedResource Include="Resources\editicon18tr.bmp" />
     <EmbeddedResource Include="Resources\recycle512RadTool.bmp" />
