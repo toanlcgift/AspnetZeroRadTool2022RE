@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{BC1DE9C4-E9DF-414D-9BD9-149B0DE45D5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AspNetZeroRadToolVisualStudioExtension</RootNamespace>
+    <AssemblyName>AspNetZeroRadToolVisualStudioExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AspNetZeroRadTool.cs" />
+    <Compile Include="Dialogs\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DbTableSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EntityGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EntityLoaders\Database\EntityLoaderFromDatabase.cs" />
+    <Compile Include="Dialogs\EntityLoaders\Database\EntityLoaderFromMySqlDatabase.cs" />
+    <Compile Include="Dialogs\EntityLoaders\Database\EntityLoaderFromPostgreSqlDatabase.cs" />
+    <Compile Include="Dialogs\EntityLoaders\Database\EntityLoaderFromSqlDatabase.cs" />
+    <Compile Include="Dialogs\EntityLoaders\Database\PostgreColumnInformation.cs" />
+    <Compile Include="Dialogs\EntityLoaders\EntityLoaderFromJson.cs" />
+    <Compile Include="Dialogs\EnumSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ForeignKeySelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\JsonEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Providers\CsFileProvider.cs" />
+    <Compile Include="Dialogs\Providers\DbContextProvider.cs" />
+    <Compile Include="Dialogs\Providers\EntityProvider.cs" />
+    <Compile Include="Dialogs\Providers\EnumProvider.cs" />
+    <Compile Include="Dialogs\Providers\MultiTenancyChecker.cs" />
+    <Compile Include="Dialogs\TableSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityInfo\DbContextDefinition.cs" />
+    <Compile Include="EntityInfo\Entity.cs" />
+    <Compile Include="EntityInfo\EnumDefinition.cs" />
+    <Compile Include="EntityInfo\EnumProperty.cs" />
+    <Compile Include="EntityInfo\NavigationProperty.cs" />
+    <Compile Include="EntityInfo\NavigationPropertyOneToManyTable.cs" />
+    <Compile Include="EntityInfo\NumericalRange.cs" />
+    <Compile Include="EntityInfo\PagePermissionInfo.cs" />
+    <Compile Include="EntityInfo\Property.cs" />
+    <Compile Include="EntityInfo\PropertyUserInterfaceInfo.cs" />
+    <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\ComboboxItem.cs" />
+    <Compile Include="Helpers\ControlExtensions.cs" />
+    <Compile Include="Helpers\ExceptionHandler.cs" />
+    <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Helpers\MsgBox.cs" />
+    <Compile Include="Helpers\ProjectVersionHelper.cs" />
+    <Compile Include="Helpers\TabPanels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AspNetZeroRadToolPackage.cs" />
+    <Compile Include="RadToolFileUpdater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AspNetZeroRadTool.zip" />
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net">
+      <Version>2.0.13</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31902.203" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5233" />
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.27</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Npgsql">
+      <Version>6.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DbTableSelectionForm.resx">
+      <DependentUpon>DbTableSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EntityGeneratorForm.resx">
+      <DependentUpon>EntityGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EnumSelectionForm.resx">
+      <DependentUpon>EnumSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ForeignKeySelectionForm.resx">
+      <DependentUpon>ForeignKeySelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\JsonEntityForm.resx">
+      <DependentUpon>JsonEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PropertyForm.resx">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TableSelectionForm.resx">
+      <DependentUpon>TableSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AspNetZero.bmp" />
+    <EmbeddedResource Include="Resources\database512RadTool.bmp" />
+    <EmbeddedResource Include="Resources\editicon18tr.bmp" />
+    <EmbeddedResource Include="Resources\recycle512RadTool.bmp" />
+    <EmbeddedResource Include="Resources\wizard512RadTool.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
