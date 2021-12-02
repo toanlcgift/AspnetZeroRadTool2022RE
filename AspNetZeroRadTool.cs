@@ -155,7 +155,6 @@ namespace AspNetZeroRadToolVisualStudioExtension
         {
             try
             {
-                MsgBox.Info((((_DTE)dte).Solution).FullName);
                 return ((_Solution)((_DTE)dte).Solution).FullName;
             }
             catch (Exception ex)
