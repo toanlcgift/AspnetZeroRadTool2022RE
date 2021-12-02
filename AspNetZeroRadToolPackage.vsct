@@ -77,7 +77,7 @@
     </Buttons>
   </Commands>
   <Symbols>
-    <GuidSymbol name="guidAspNetZeroRadToolPackage" value="{0435dea8-3a1c-4a1b-bcc5-309e1bbecf94}" />
+    <GuidSymbol name="guidAspNetZeroRadToolPackage" value="{bcf81947-e1c3-42a5-9cf9-b52b0523fbbf}" />
     <GuidSymbol name="Group_Undefined" value="{83285929-227c-11d3-b870-00c04f79f802}" />
     <GuidSymbol name="Pkg_Undefined" value="{8328592a-227c-11d3-b870-00c04f79f802}" />
     <GuidSymbol name="guidImages" value="{3d5d2cf8-e52d-416d-83e8-b3c989586bf3}">
