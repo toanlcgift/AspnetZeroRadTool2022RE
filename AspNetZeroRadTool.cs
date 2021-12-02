@@ -134,6 +134,8 @@ namespace AspNetZeroRadToolVisualStudioExtension
         }
         try
         {
+                   var solutionFullName2 = this.GetSolutionFullName(service);
+                    MsgBox.Info(solutionFullName2);
           new EntityGeneratorForm(entity).Show();
         }
         catch (Exception ex)
@@ -155,7 +157,8 @@ namespace AspNetZeroRadToolVisualStudioExtension
     {
       try
       {
-        return ((_Solution) ((_DTE) dte).Solution).FullName;
+                MsgBox.Info((((_DTE)dte).Solution).FullName);
+                return ((_Solution) ((_DTE) dte).Solution).FullName;
       }
       catch (Exception ex)
       {
